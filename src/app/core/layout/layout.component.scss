@@ -1,0 +1,35 @@
+@import "appColors";
+
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+nav {
+  position: relative;
+  padding: 10px;
+  background-color: $main;
+
+  .activeOverlay {
+    content: '';
+    position: absolute;
+    left: 10px;
+    display: inline-block;
+    background-color: rgba(#fff, .2);
+    border-radius: 10px;
+    z-index: 1;
+  }
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  z-index: 2;
+}
+
+main {
+  padding: 20px;
+}

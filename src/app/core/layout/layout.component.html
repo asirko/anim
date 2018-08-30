@@ -1,0 +1,9 @@
+<nav>
+  <a routerLink="/home" #link routerLinkActive="active">Home</a>
+  <a routerLink="/about" #link routerLinkActive="active">About</a>
+  <div class="activeOverlay" [@navigationTransition]="state"></div>
+</nav>
+
+<main [@routerTransition]="state">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
