@@ -36,11 +36,18 @@ export class LayoutComponent implements OnInit, AfterViewInit {
     const selectedLink: HTMLAnchorElement = this.links.find(({nativeElement: link}: {nativeElement: HTMLAnchorElement}) => {
       return link.getAttribute('routerLink') === this.router.url;
     }).nativeElement;
+
+    const offsetX = this.links.first.nativeElement.getBoundingClientRect().x;
+    const translateX = selectedLink.getBoundingClientRect()['x'] - offsetX;
+    const index = indexOf(selectedLink);
+
     this.state = {
-      value: indexOf(selectedLink),
+      value: index,
       params: {
         width: selectedLink.offsetWidth,
         height: selectedLink.offsetHeight,
+        translateX,
+        direction: !this.state || this.state.value < index ? 1 : -1,
       }
     };
   }
