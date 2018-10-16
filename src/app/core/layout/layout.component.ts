@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, QueryL
 import { navigationTransition, routerTransition } from './router-animation';
 import { indexOf } from '../../shared/utils/dom-utils';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter, tap } from 'rxjs/operators';
+import { filter, startWith, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout',

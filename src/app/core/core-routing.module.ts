@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './layout/home/home.component';
-import { AboutComponent } from './layout/about/about.component';
+import { FadeOnListComponent } from './layout/fade-on-list/fade-on-list.component';
+import { DelayAsyncComponent } from './layout/delay-async/delay-async.component';
 
 const routes: Routes = [
   {
@@ -12,15 +12,13 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'home',
+        redirectTo: 'fade-on-list',
       }, {
-        path: 'home',
-        component: HomeComponent,
-        data: { state: 0 },
+        path: 'fade-on-list',
+        component: FadeOnListComponent,
       }, {
-        path: 'about',
-        component: AboutComponent,
-        data: { state: 1 },
+        path: 'delay-async',
+        component: DelayAsyncComponent,
       }
     ]
   }

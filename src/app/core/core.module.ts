@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CoreRoutingModule } from './core-routing.module';
 import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './layout/home/home.component';
-import { AboutComponent } from './layout/about/about.component';
+import { FadeOnListComponent } from './layout/fade-on-list/fade-on-list.component';
+import { DelayAsyncComponent } from './layout/delay-async/delay-async.component';
 
 @NgModule({
   imports: [
@@ -16,8 +16,8 @@ import { AboutComponent } from './layout/about/about.component';
   ],
   declarations: [
     LayoutComponent,
-    HomeComponent,
-    AboutComponent
+    FadeOnListComponent,
+    DelayAsyncComponent
   ]
 })
 export class CoreModule { }
