@@ -1,0 +1,5 @@
+<div *ngIf="questionForAnimation$ | async as question" [@transition]="state" (@transition.done)="animationEnded($event)">
+  {{question}}
+</div>
+
+<markdown ngPreserveWhitespaces [data]="getComponentText()"></markdown>
