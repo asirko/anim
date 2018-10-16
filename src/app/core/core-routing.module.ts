@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { FadeOnListComponent } from './layout/fade-on-list/fade-on-list.component';
 import { DelayAsyncComponent } from './layout/delay-async/delay-async.component';
+import { DynamicListComponent } from './examples/dynamic-list/dynamic-list.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,9 @@ const routes: Routes = [
       }, {
         path: 'delay-async',
         component: DelayAsyncComponent,
+      }, {
+        path: 'dynamic-list',
+        component: DynamicListComponent,
       }
     ]
   }

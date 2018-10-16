@@ -6,6 +6,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { FadeOnListComponent } from './layout/fade-on-list/fade-on-list.component';
 import { DelayAsyncComponent } from './layout/delay-async/delay-async.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { DynamicListComponent } from './examples/dynamic-list/dynamic-list.component';
+import { DynamicListDemoComponent } from './examples/dynamic-list/dynamic-list-demo/dynamic-list-demo.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { MarkdownModule } from 'ngx-markdown';
   declarations: [
     LayoutComponent,
     FadeOnListComponent,
-    DelayAsyncComponent
+    DelayAsyncComponent,
+    DynamicListComponent,
+    DynamicListDemoComponent,
   ]
 })
 export class CoreModule { }
