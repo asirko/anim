@@ -12,7 +12,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'fade-on-list',
+        redirectTo: 'dynamic-list',
       }, {
         path: 'dynamic-list',
         component: DynamicListComponent,
