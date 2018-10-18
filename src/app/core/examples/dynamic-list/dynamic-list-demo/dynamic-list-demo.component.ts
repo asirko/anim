@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -14,19 +14,24 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     ])
   ]
 })
-export class DynamicListDemoComponent implements OnInit {
+export class DynamicListDemoComponent implements OnInit, OnDestroy {
 
-  test: string[] = [];
+  dynamicArray: string[] = [];
+  sub: Subscription;
 
   constructor() { }
 
   ngOnInit() {
-    interval(1000).subscribe(compteur => {
-      this.test.push(`valeur ${compteur}`);
-      if (this.test.length > 4) {
-        this.test.splice(0, 1);
+    this.sub = interval(1000).subscribe(compteur => {
+      this.dynamicArray.push(`valeur ${compteur}`);
+      if (this.dynamicArray.length > 4) {
+        this.dynamicArray.splice(0, 1);
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
 }

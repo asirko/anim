@@ -6,7 +6,7 @@
     "start": "ng serve -o",
     "build": "ng build --prod",
     "predeploy": "npm run build -- --base-href \"https://asirko.github.io/anim/\"",
-    "deploy": "ngh --no-silent --dir=dist/anim",
+    "deploy": "ngh --dir=dist/anim",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
