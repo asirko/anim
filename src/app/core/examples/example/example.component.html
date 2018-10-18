@@ -1,0 +1,29 @@
+<markdown class="description" [data]="description"></markdown>
+
+<div class="demo">
+  <h3>Exemple</h3>
+  <ng-content></ng-content>
+</div>
+
+<markdown class="core-idea" [data]="coreIdea"></markdown>
+
+
+<ng-container *ngIf="code$ | async as code">
+  <div class="github-ref">
+    <h3>Lien</h3>
+
+    <div><a [href]="code.htmlUrl" target="_blank">le template</a></div>
+    <div><a [href]="code.tsUrl" target="_blank">le controller</a></div>
+  </div>
+
+  <div class="code">
+    <div class="template">
+      <h4>Template</h4>
+      <markdown [data]="code.html"></markdown>
+    </div>
+    <div class="controller">
+      <h4>Controller</h4>
+      <markdown [data]="code.ts"></markdown>
+    </div>
+  </div>
+</ng-container>

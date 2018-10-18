@@ -10,8 +10,8 @@ const QUESTIONS = [
 ];
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './delay-async.component.html',
+  selector: 'app-morphing-object-demo',
+  templateUrl: './morphing-object-demo.component.html',
   animations: [
     trigger('transition', [
       state('in', style({opacity: 1})),
@@ -20,7 +20,7 @@ const QUESTIONS = [
     ])
   ]
 })
-export class DelayAsyncComponent implements OnDestroy {
+export class MorphingObjectDemoComponent implements OnDestroy {
   state;
   canShowNext$ = new Subject();
 
