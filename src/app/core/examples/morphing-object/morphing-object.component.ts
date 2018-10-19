@@ -8,29 +8,29 @@ import { Component } from '@angular/core';
 export class MorphingObjectComponent {
 
   description = `
-### Liste dynamique
+### Objet mutant
 
-Il s'agit d'animer les éléments d'une liste qui est mise à jour dynamiquement.
-Cette évolution peut-être le résultat d'un observable changeant le jeu de donné
-ou une modification faite directement sur un tableau mutable de manière synchrone.
+Admettons que l'on ait un objet dont l'état est géré par un service, et que cet objet change
+au cours du temps. Par exemple&nbsp;: un carrousel dont le contenu évolu.
 
-Les éléments peuvent donc individuellement être ajouté ou retiré au cours du temps.
+Une animation classique pour montrer les transition entre 2 valeurs successives serait
+un fade-out pour sortir l'élément précédent et un fade-in pour afficher le nouvel élément.
 
-La liste est affiché avec \`*ngFor="let element of list$ | async"\`.
+Ce contenu peut être manipulé par d'autre portion de l'application, dans ce cas, il a de forte chance
+d'être géré par un observable. Avec l'usage du pipe async, le contenu est mis à jour directement.
 `;
 
   coreIdea = `
 ### Principe général
 
-Angular met à disposition un _état virtuel_&nbsp;: \`void\`.
-Cet état peut être vu comme _l'élément n'est pas dans le DOM._
+Le mécanisme est centré sur l'utilisation de l'opérateur \`delayWhen\` de RxJS.
+Il permet de retarder l'envoie de la donnée.
 
-Il est alors possible de créer une \`transition\` sur son ajout et sa suppression du DOM&nbsp;: \`void <=> *\`
+Ainsi, il est possible, à la réception d'une nouvelle valeur par l'observable, de retarder la propagation
+de cette valeur jusqu'à l'IHM.
 
-**Attention&nbsp;:** dans le cas d'un tableau complexe d'objet, la détection de mise à jour peut ne pas fonctionner
-correctement (aucun changement ou la transition se joue sur tous les éléments à chaque fois).
-Dans ce cas, une piste de résolution est de prendre le contrôle sur le mécanisme de mise à jour du \`*ngFro\`
-(cf: trackBy).
+Avant le \`̀delayWhen\`, il est possible de déclencher l'animation avec un \`tap\`. Ensuite, il est possible
+de laisser la valeur se propager après le \`(@animation.done)\`.
 `;
 
   constructor() { }
